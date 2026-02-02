@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phạm Trần Tuấn Vĩ - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: #4a3933;
+            color: white;
+            padding: 30px 25px;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: block;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            object-fit: cover;
+            background-color: #666;
+        }
+
+        .profile-name {
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .profile-title {
+            text-align: center;
+            font-size: 1em;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 0.9em;
+        }
+
+        .sidebar-item-icon {
+            margin-right: 10px;
+            min-width: 20px;
+        }
+
+        .sidebar-item-text {
+            word-break: break-word;
+        }
+
+        .sidebar-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .sidebar-item a:hover {
+            text-decoration: underline;
+        }
+
+        .sidebar-heading {
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 10px 15px;
+            margin: 25px -25px 20px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .education-item {
+            margin-bottom: 15px;
+        }
+
+        .education-title {
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .education-period {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-bottom: 3px;
+        }
+
+        .education-school {
+            font-size: 0.9em;
+        }
+
+        .education-gpa {
+            font-size: 0.9em;
+            margin-top: 3px;
+        }
+
+        .skills-category {
+            margin-bottom: 12px;
+        }
+
+        .skills-label {
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .skills-text {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .hobbies-list {
+            list-style: none;
+        }
+
+        .hobbies-list li {
+            padding: 5px 0;
+            font-size: 0.9em;
+        }
+
+        /* Main Content */
+        .main-content {
+            background-color: #e8e8e8;
+            padding: 40px 45px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            background-color: #6b5d57;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.1em;
+            font-weight: 600;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .objective-text {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .project {
+            background-color: white;
+            padding: 25px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .project-role {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .project-period {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .project-content {
+            margin-bottom: 12px;
+        }
+
+        .project-content ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        .project-content li {
+            margin-bottom: 8px;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .project-tech {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .project-tech strong {
+            color: #333;
+        }
+
+        .project-tech-list {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .language-grid {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .language-name {
+            font-weight: 600;
+        }
+
+        .language-level {
+            color: #666;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                padding: 30px 20px;
+            }
+            .main-content {
+                padding: 30px 20px;
+            }
+            .language-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Crect width='180' height='180' fill='%23666'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='60' fill='%23fff'%3ETV%3C/text%3E%3C/svg%3E" 
+                 alt="Profile Photo" class="profile-photo">
+            
+            <h1 class="profile-name">Phạm Trần Tuấn Vĩ</h1>
+            <p class="profile-title">Sinh viên IT</p>
+
+            <div class="sidebar-section">
+                <div class="sidebar-item">
+                    <span class="sidebar-item-icon">📞</span>
+                    <span class="sidebar-item-text">0382698605</span>
+                </div>
+                <div class="sidebar-item">
+                    <span class="sidebar-item-icon">📅</span>
+                    <span class="sidebar-item-text">14/07/2004</span>
+                </div>
+                <div class="sidebar-item">
+                    <span class="sidebar-item-icon">✉</span>
+                    <span class="sidebar-item-text">phamvi1407@gmail.com</span>
+                </div>
+                <div class="sidebar-item">
+                    <span class="sidebar-item-icon">🔗</span>
+                    <span class="sidebar-item-text"><a href="https://github.com/TuanVi14">https://github.com/TuanVi14</a></span>
+                </div>
+                <div class="sidebar-item">
+                    <span class="sidebar-item-icon">🔗</span>
+                    <span class="sidebar-item-text"><a href="https://byvn.net/q1Pv">https://byvn.net/q1Pv</a></span>
+                </div>
+                <div class="sidebar-item">
+                    <span class="sidebar-item-icon">🔗</span>
+                    <span class="sidebar-item-text"><a href="https://forms.gle/zdwWffvgmKseKW7p8">https://forms.gle/zdwWffvgmKseKW7p8</a></span>
+                </div>
+                <div class="sidebar-item">
+                    <span class="sidebar-item-icon">📍</span>
+                    <span class="sidebar-item-text">Xã Mỹ Thành, tỉnh Đồng Tháp</span>
+                </div>
+            </div>
+
+            <h2 class="sidebar-heading">Học vấn</h2>
+            <div class="education-item">
+                <div class="education-title">Công nghệ thông tin</div>
+                <div class="education-period">2022 - 2026</div>
+                <div class="education-school">Đại học Nam Cần Thơ</div>
+                <div class="education-gpa">GPA: 3.5/4.0</div>
+            </div>
+
+            <h2 class="sidebar-heading">Kỹ năng chuyên môn</h2>
+            <div class="skills-category">
+                <div class="skills-label">Ngôn ngữ lập trình:</div>
+                <div class="skills-text">Java, C++, C#</div>
+            </div>
+            <div class="skills-category">
+                <div class="skills-label">Công nghệ Web:</div>
+                <div class="skills-text">HTML5, CSS3</div>
+            </div>
+            <div class="skills-category">
+                <div class="skills-label">Cơ sở dữ liệu:</div>
+                <div class="skills-text">MySQL, MongoDB, SQL Server</div>
+            </div>
+
+            <h2 class="sidebar-heading">Sở thích</h2>
+            <ul class="hobbies-list">
+                <li>Đọc sách</li>
+                <li>Chơi thể thao điện tử</li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="section">
+                <div class="section-title">Mục tiêu nghề nghiệp</div>
+                <div class="objective-text">
+                    Sinh viên năm 4 ngành Công nghệ Thông tin với kiến thức vững chắc về Backend, tìm kiếm cơ hội thực tập tại vị trí Junior Developer để áp dụng kiến thức đã học, phát triển kỹ năng lập trình và đóng góp vào sự phát triển của công ty.
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Dự án</div>
+                
+                <div class="project">
+                    <div class="project-header">
+                        <div class="project-role">Lập trình viên chính</div>
+                        <div class="project-period">05/2025 - 08/2025</div>
+                    </div>
+                    <div class="project-title">Web quản lý bảo hành cho hệ thống bán lẻ (Đồ án cơ sở)</div>
+                    <div class="project-content">
+                        <ul>
+                            <li>Website Quản Lý Bảo Hành cho hệ thống bán lẻ là một giải pháp công nghệ thông tin nhằm số hóa và tự động hóa quy trình bảo hành sản phẩm trong lĩnh vực bán lẻ. Mục đích dự án số hóa quy trình bảo hành, tập trung dữ liệu, cải thiện trải nghiệm khách hàng và hỗ trợ phân tích để nâng cao hiệu quả quản lý cho hệ thống bán lẻ.</li>
+                            <li>Kết quả đạt được: Xây dựng thành công website quản lý bảo hành với đầy đủ các chức năng quản lý sản phẩm, khách hàng, yêu cầu bảo hành, phiếu bảo hành, nhân viên, phân quyền, báo cáo thống kê theo thời gian thực, giao diện thân thiện và cơ sở dữ liệu tối ưu.</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <strong>Công nghệ áp dụng:</strong>
+                        <div class="project-tech-list">ASP.NET Core MVC 8, C#, Entity Framework Core, SQL Server, HTML5/CSS3/JavaScript, Bootstrap, JWT, Microsoft Identity, Newtonsoft.Json, Visual Studio 2022.</div>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <div class="project-role">Lập trình viên chính</div>
+                        <div class="project-period">09/2025 - 10/2025</div>
+                    </div>
+                    <div class="project-title">App mobile quản lý chi tiêu cá nhân (Dự án môn học)</div>
+                    <div class="project-content">
+                        <ul>
+                            <li>Ứng dụng mobile quản lý chi tiêu cá nhân giúp người dùng theo dõi thu chi hàng ngày, phân loại các khoản chi tiêu theo danh mục (ăn uống, đi lại, giải trí, hóa đơn...), và xem báo cáo thống kê trực quan qua biểu đồ. Mục đích của dự án là xây dựng công cụ hỗ trợ người dùng quản lý tài chính hiệu quả, tiết kiệm chi phí và có cái nhìn tổng quan về tình hình tài chính cá nhân.</li>
+                            <li>Kết quả: Hoàn thành ứng dụng mobile với đầy đủ chức năng ghi nhận thu chi, phân loại theo danh mục, lọc giao dịch theo thời gian, giao diện thân thiện và lưu trữ dữ liệu offline.</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <strong>Công nghệ:</strong>
+                        <div class="project-tech-list">Android Studio, Java, SQLite, XML Layout, SharedPreferences.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Ngôn ngữ</div>
+                <div class="language-grid">
+                    <div class="language-item">
+                        <span class="language-name">Tiếng Việt:</span>
+                        <span class="language-level">Bản ngữ</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">Tiếng Anh:</span>
+                        <span class="language-level">Đọc hiểu tốt</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
